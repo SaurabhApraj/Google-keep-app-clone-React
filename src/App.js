@@ -25,18 +25,22 @@ const App = () => {
   return (
     <>
       <Header />
-      <CreateNote passNote={addNote} />
-      {addItem.map((val, index) => {
-        return (
-          <Note
-            key={index}
-            id={index}
-            title={val.title}
-            content={val.content}
-            deleteItem={onDelete}
-          />
-        );
-      })}
+      <div className="main__body">
+        <div className="innerbox">
+          <CreateNote passNote={addNote} />
+          {addItem.map((val, index) => {
+            return (
+              <Note
+                key={index}
+                id={index}
+                title={val.title}
+                content={val.content}
+                deleteItem={onDelete}
+              />
+            );
+          })}
+        </div>
+      </div>
       <Footer />
     </>
   );
